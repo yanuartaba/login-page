@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(238,174,202,1) 30%, rgba(148,187,233,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 30vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    box-shadow: 16px 14px 20px rgba(0, 0, 0, 0.3);
+}
+
+.neon-text{
+    font-size: 2rem;    
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #1063c2,
+    0 0 82px #1063c2;
+    animation: flick 1s infinite;
+}
+
+.form-login {
+    height: 60%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+.form-input {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 1rem;
+}
+
+input {
+    padding: .3rem;
+    font-size: 1.5rem;
+   
+}
+
+input:focus {
+    outline: none;
+    background-color: white;
+    animation: stretch .2s ease-in;
+  }
+
+
+.btn-login {
+    width: 200px;
+    height: 50px;
+    box-shadow: 16px 14px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-login::before{
+    content: "";
+    background-image: conic-gradient(
+        rgb(90, 140, 197) 20deg,
+        transparent 160deg
+    );
+    width: 150%;
+    height: 80%;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+    animation-delay: 1s;
+}
+.btn-login::after{
+    content: "LOGIN";
+    width: 190px;
+    height: 40px;
+    background: rgba(238,174,202,1);
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff0052;
+    font-size: larger;
+    letter-spacing: 5px;
+    box-shadow: inset 20px 20px 20px rgba(238,174,202,1);
+}
+
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }   
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes flick {
+    0% {
+        opacity: .4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes stretch {
+    0%{
+        transform: scaleY(0);
+    }   
+    100%{
+        transform: scaleY(1);
+    }
+}
